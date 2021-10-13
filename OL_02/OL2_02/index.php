@@ -1,3 +1,6 @@
-<?php include "include/header.php"; ?>
+<?php include_once "include/header.php"; ?>
 
-<?php include "include/footer.php"; ?>
+<h1>Välkommen till startsidan!</h1>
+<p>Hej och hå!</p>
+
+<?php include_once "include/footer.php"; ?>
