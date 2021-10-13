@@ -37,9 +37,12 @@
       <!-- Left links -->
 
       <div class="d-flex align-items-center">
+      <a type="button" class="btn me-3" href="adopt.php">
+          Adopt
+        </a>
         <a type="button" class="btn btn-primary me-3" href="login.php">
           Login
-        </a>
+</a>
       </div>
     </div>
     <!-- Collapsible wrapper -->
