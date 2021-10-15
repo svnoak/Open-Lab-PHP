@@ -1,3 +1,8 @@
+:root{
+    --selector-position: -40vw;
+}
+
+
 *{
     margin: 0;
 }
@@ -19,7 +24,7 @@ body {
 }
 
 nav {
-    height: 10vh;
+    height: 100px;
     min-height: 100px;
     display: flex;
     justify-content: flex-start;
@@ -43,14 +48,6 @@ nav ul li{
     transition: 0.2s ease-in-out;
 }
 
-/* nav ul li:hover{
-    border-bottom: 1px solid #fff;
-}
-
-.active{
-    border-bottom: 1px solid #333;
-} */
-
 nav ul li a{
     color: white;
     text-decoration: none;
@@ -58,31 +55,29 @@ nav ul li a{
 
 .nav-item#nav-home:hover~#selector,
 .nav-item:first-child.active~#selector{
-    left: -40vw;
+    left: var(--selector-position);
 }
 
 .nav-item#nav-movies:hover~#selector,
 .nav-item:nth-child(2).active~#selector{
-    left: -30vw;
+    left: calc(var(--selector-position) + 10vw);
 }
 
 .nav-item#nav-profile:hover~#selector,
 .nav-item:nth-child(3).active~#selector{
-    left: -20vw;
+    left: calc(var(--selector-position) + 20vw);
 }
 
 .nav-item:nth-child(4):hover~#selector{
-    left: -10vw;
+    left: calc(var(--selector-position) + 30vw);
 }
-
-
 
 
 
 #selector{
     position: relative;
-    left: -40vw;
-    top: 3vh;
+    left: var(--selector-position);
+    top: 30px;
     height: 2px;
     width: 10vw;
     background-color: #fff;
@@ -159,6 +154,10 @@ p.description{
     margin: 2vh 0;
 }
 
+p.alert{
+    color: #c70a14;
+}
+
 .sign-in-btn{
     border-radius: 4px;
     font-size: 16px;
@@ -175,4 +174,8 @@ p.description{
 
 .sign-in-btn:hover{
     background: #c70a14;
+}
+
+.profile {
+    color: #fff;
 }

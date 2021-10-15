@@ -1,3 +1,6 @@
 <?php
-// Här förstör ni sessionen och skickar tillbaka användaren till index.php
+    session_start();
+    session_unset();
+    session_destroy();
+    header("location: /index.php");
 ?>

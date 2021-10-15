@@ -14,21 +14,25 @@ if( isset($_POST) ){
                 if( $user['password'] === $pwd ){
                     $_SESSION['username'] = $user['username'];
                     $_SESSION['email'] = $user['email'];
+                    $_SESSION['isLoggedIn'] = true;
                     header("location: /pages/profile.php");
                     exit();
                 } else{
-                    $_SESSION['error'] = "Error 1";
+                    $_SESSION['error'] = "Fel användarnamn eller lösenord";
+                    $_SESSION['isLoggedIn'] = false;
                     header("location: /index.php");
                     exit();
                 }
             } else{
-                $_SESSION['error'] = "Error 1";
+                $_SESSION['error'] = "Fel användarnamn eller lösenord";
+                $_SESSION['isLoggedIn'] = false;
                 header("location: /index.php");
                 exit();
             }
         }
     } else {
-        $_SESSION['error'] = "Error 2";
+        $_SESSION['error'] = "Du måste ange en giltig mejladdress";
+        $_SESSION['isLoggedIn'] = false;
         header("location: index.php");
         exit();
     }

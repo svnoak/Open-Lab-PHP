@@ -2,17 +2,26 @@
 include "../sections/header.php";
 require_once "../config.php";
 
-/* if( !isset($_SESSION['isLoggedIn']) ){
-    header("location: /index.php");
-    exit();
-} */
+var_dump( $_SESSION['isLoggedIn'] );
 
-    $username = "Kim";
-    $email = "kim@email.com"
+if( isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn'] ){
+    $username = $_SESSION['username'];
+    $email = $_SESSION['email'];
 ?>
 
 <section class="profile">
-    <p><span><?php $username ?></span></p>
+    <p><span><?php echo $username ?></span></p>
 </section>
+
+
+<?php 
+}else{
+    session_destroy();
+    header("location: /index.php");
+    exit();
+} 
+
+
+?>
 
 <?php require_once "../sections/footer.php"; ?>
