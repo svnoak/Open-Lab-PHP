@@ -2,15 +2,16 @@
 include "../sections/header.php";
 require_once "../config.php";
 
-var_dump( $_SESSION['isLoggedIn'] );
-
 if( isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn'] ){
     $username = $_SESSION['username'];
     $email = $_SESSION['email'];
 ?>
 
-<section class="profile">
-    <p><span><?php echo $username ?></span></p>
+<section class="profile-section">
+    <div class="profile-box">
+        <p><span>Användarnamn: </span><?php echo $username ?></p>
+        <p><span>Mejl: </span><?php echo $email ?></p>
+    </div>
 </section>
 
 

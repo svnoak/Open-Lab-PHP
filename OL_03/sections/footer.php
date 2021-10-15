@@ -4,6 +4,6 @@
 // Samt det nuvarande året.
 ?>
 
-<footer><span>&#169;</span>2021</footer>
+<footer><span>&#169;</span>2021  <?php if(isset($_SESSION['username'])){ echo "| Inloggad som: $_SESSION[username]"; } ?></footer>
 </body>
 </html>

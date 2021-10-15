@@ -176,6 +176,23 @@ p.alert{
     background: #c70a14;
 }
 
-.profile {
+.profile-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: #fff;
+}
+
+.profile-box{
+    background-color: rgba(0,0,0,0.8);
+    height: 10vh;
+    width: 20vw;
+    border: 50px solid rgba(0,0,0,0);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.profile-box span{
+    font-weight: bold;
 }
