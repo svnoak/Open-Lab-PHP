@@ -30,5 +30,6 @@ $movies = [
 // Lägg till en array över användare där varje användare har:
 //  "username", "email" och "password" som nycklar.
 $users = [
+    ["username" => "Kim", "email" => "kim@email.com", "password" => "12345"],
 ];
 ?>

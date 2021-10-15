@@ -1,11 +1,36 @@
 <?php
-// Här kontrollerar ni att användaren har fyllt i fälten och att det är rätt,
-// annars skickar vi tillbaka dom till startsidan med en GET-parameter så vi
-// kan visa för dom att något gick fel. Om allt var korrekt skickar vi dom bara
-// direkt till startsidan. Glöm inte inkludera arrayen över användare.
-//
-// Observera att man ska logga in med sin email. Användarnamnet använder vi för
-// att bland annat ha med det i sidfoten. Så tänk på vad ni behöver spara i er
-// session.
+require_once "../config.php";
+session_start();
 
+if( isset($_POST) ){
+
+    $email = $_POST['email'];
+    $pwd = $_POST['password'];
+
+    if( str_contains($email, "@") ){
+
+        foreach($users as $user ){
+            if( $user['email'] === $email ){
+                if( $user['password'] === $pwd ){
+                    $_SESSION['username'] = $user['username'];
+                    $_SESSION['email'] = $user['email'];
+                    header("location: /pages/profile.php");
+                    exit();
+                } else{
+                    $_SESSION['error'] = "Error 1";
+                    header("location: /index.php");
+                    exit();
+                }
+            } else{
+                $_SESSION['error'] = "Error 1";
+                header("location: /index.php");
+                exit();
+            }
+        }
+    } else {
+        $_SESSION['error'] = "Error 2";
+        header("location: index.php");
+        exit();
+    }
+}
 ?>

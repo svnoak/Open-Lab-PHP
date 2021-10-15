@@ -4,4 +4,6 @@
 // Samt det nuvarande året.
 ?>
 
-<!-- Här skriver ni ut er sidfot. -->
+<footer><span>&#169;</span>2021</footer>
+</body>
+</html>
